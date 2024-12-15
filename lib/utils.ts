@@ -95,7 +95,7 @@ export const formatDateTime = (isoString: string | null | undefined) => {
   hours = hours % 12 || 12;
 
   // Format the time and date parts
-  const time = `${hours}:${minutes.toString().padStart(2, "0")}${period}`;
+  const time = `${hours}:${minutes.toString().padStart(2, "0")} ${period}`;
   const day = date.getDate();
   const monthNames = [
     "Jan",
@@ -113,7 +113,7 @@ export const formatDateTime = (isoString: string | null | undefined) => {
   ];
   const month = monthNames[date.getMonth()];
 
-  return `${time}, ${day} ${month}`;
+  return ` ${day} ${month}, ${time}`;
 };
 
 export const getFileIcon = (
